@@ -1,0 +1,15 @@
+These dependencies were not found:
+
+* !!vue-style-loader!css-loader?{"sourceMap":true}!../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-
+0f4903d4","scoped":true,"hasInlineConfig":false}!sass-loader?{"sourceMap":true}!../../../node_modules/vue-loader/lib/selector?type=sty
+les&index=0!./head.vue in ./src/base/components/head.vue
+* !!vue-style-loader!css-loader?{"sourceMap":true}!../../../../node_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data
+-v-c93be360","scoped":true,"hasInlineConfig":false}!sass-loader?{"sourceMap":true}!../../../../node_modules/vue-loader/lib/selector?ty
+pe=styles&index=0!./home.vue in ./src/modules/home/page/home.vue
+
+To install them, you can run: npm install --save !!vue-style-loader!css-loader?{"sourceMap":true}!../../../node_modules/vue-loader/lib
+/style-compiler/index?{"vue":true,"id":"data-v-0f4903d4","scoped":true,"hasInlineConfig":false}!sass-loader?{"sourceMap":true}!../../.
+./node_modules/vue-loader/lib/selector?type=styles&index=0!./head.vue !!vue-style-loader!css-loader?{"sourceMap":true}!../../../../nod
+e_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-c93be360","scoped":true,"hasInlineConfig":false}!sass-loader?{"
+sourceMap":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./home.vue
+4.18配置项目的时候  一直报这个错  暂时还没有处理掉  要先工作了
