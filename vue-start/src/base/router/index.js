@@ -8,6 +8,8 @@ let concat = (router) => {
 }
 // // 导入路由规则
 import HomeRouter from '../../modules/home/router'
+import RegisterRouter from '../../modules/register/router'
 // 合并路由规则
-concat(HomeRouter)
+concat(HomeRouter);
+concat(RegisterRouter);
 export default routes;
