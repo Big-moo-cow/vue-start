@@ -14,3 +14,4 @@ e_modules/vue-loader/lib/style-compiler/index?{"vue":true,"id":"data-v-c93be360"
 sourceMap":true}!../../../../node_modules/vue-loader/lib/selector?type=styles&index=0!./home.vue
 4.18配置项目的时候  一直报这个错  暂时还没有处理掉  要先工作了
 由上面这个错误   去对比    安装vue-style
+处理完毕  错误日志发到博客上了  csdn:Cza_of_north
