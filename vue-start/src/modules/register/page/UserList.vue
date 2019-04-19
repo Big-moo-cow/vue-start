@@ -20,7 +20,7 @@
           
     </el-table>
     <el-pagination layout="prev, pager, next" :page-size="this.params.size" v-on:current-change="changePage"
-                   :total="total"  :current-page="this.params.page"  style="float:right;">
+                   :total="total" :current-page="this.params.page"  style="float:right;">
           
     </el-pagination>
   </div>
@@ -32,7 +32,7 @@
     data() {
       return {
         list: [],
-        total:10,
+        total: 10,
         params: {
           page: 1,
           size: 1
