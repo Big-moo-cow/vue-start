@@ -26,6 +26,8 @@
   </div>
 </template>
 <script>
+  import * as registerApi from '../api/register'
+
   //填写js代码，实现VM的功能，创建vue实例
   export default {
     name: "UserList",
@@ -35,7 +37,7 @@
         total: 10,
         params: {
           page: 1,
-          size: 1
+          size: 10
         }
       }
     },
@@ -44,8 +46,16 @@
         this.query()
       },
       query: function () {
-        alert("查询");
+        registerApi.UserList(this.params.page, this.params.size, this.params).then((res) => {
+          console.log();
+          debugger;
+          this.total = res.data.total;
+          this.list = res.data.list;
+        })
       }
+    },
+    mounted() {
+      this.query()
     }
   }
 </script>
