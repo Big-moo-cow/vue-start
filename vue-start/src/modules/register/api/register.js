@@ -23,5 +23,12 @@ export const UserList = (page, size, params) => {
   //
   // })
 
-    return axios.get(apiUrl+'/register/list/'+page+'/'+size)
+
+    return axios.get(apiUrl+'/register/list/'+page+'/'+size,{
+      params:{
+        name:params.name,
+        id:params.id,
+        phone:params.phone
+      }
+    })
 }
