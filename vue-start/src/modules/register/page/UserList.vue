@@ -62,7 +62,6 @@
       query: function () {
         registerApi.UserList(this.params.page, this.params.size, this.params).then((res) => {
           console.log();
-          debugger;
           this.total = res.data.total;
           this.list = res.data.list;
         })

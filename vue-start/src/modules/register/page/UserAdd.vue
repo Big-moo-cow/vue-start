@@ -31,12 +31,14 @@
       </el-form-item>
       <el-form-item prop="userEmail">
         用户email:
-        <el-input v-model="params.phone" auto-complete="off" style="width: 50%"></el-input>
+        <el-input v-model="params.email" auto-complete="off" style="width: 50%"></el-input>
       </el-form-item>
       <el-form-item prop="validCode">
         验证码:
         <el-input v-model="params.validCode" auto-complete="off" style="width: 40%"></el-input>
-        <el-button type="primary" v-on:click="offButton" size="small" :disabled="unDisabled">发送验证码</el-button>
+        <el-button type="primary" @click="getCode" size="middle" :disabled="code.codeDisabled" style="width: 12%">
+          {{code.codeMsg}}
+        </el-button>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
@@ -50,11 +52,14 @@
 
   export default {
     name: "UserAdd",
-      data() {
-
+    data() {
       return {
-        unDisabled:false,
-
+        code: {
+          codeDisabled: false,
+          codeDown: 60,
+          codeMsg: "获取验证码",
+          timer: null
+        },
         params: {
           name: "",
           age: "",
@@ -69,12 +74,32 @@
     methods: {
       addSubmit: function () {
       },
-      offButton: function () {
-        var num = 60;
-        var int = setInterval(()=>{
-          num>0?num--:clearInterval(int)
-        }, 1000);
-
+      getCode: function () {
+        debugger;
+        if (this.params.phone !== null && this.params.phone !== "") {
+          registerApi.sendCheckCode(this.params.phone).then((res) => {
+            console.log();
+            alert("验证码发送成功" + res.data.sixRandom);
+          });
+          let me = this.code;
+          me.codeDisabled = true;
+          me.timer = window.setInterval(function () {
+            if (me.codeDown > 0 && me.codeDown <= 60) {
+              me.codeDown--;
+              if (me.codeDown !== 0) {
+                me.codeMsg = "重新发送(" + me.codeDown + ")";
+              } else {
+                clearInterval(me.timer);
+                me.codeDown = 60;
+                me.codeMsg = "获取验证码";
+                me.timer = null;
+                me.codeDisabled = false;
+              }
+            }
+          }, 1000)
+        } else {
+          alert("电话号码不能为空!")
+        }
       },
     }
   }
